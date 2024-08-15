@@ -3,7 +3,7 @@
 r'''
 Here we generate bash scripts downloads for the K2 mission long-cadence light curves.
 
-The input is a CSV file of Kepler targets. This file must contain
+The input is a CSV file of K2 targets. This file must contain
 the respective EPIC IDs of the desired targets. In my needs, I used
 the K2PC TCE table, which can be found in:
 
@@ -25,6 +25,10 @@ import lightkurve as lk
 
 # Function to get the unknown campain numbers using LightKurve.
 def get_campains_numbers_from_lightkurve(nan_epicID):
+    '''
+    Enters an epicID to search for its informations
+    using LightKurve library.
+    '''
     string_size_reference = len('K2 Campaign ')
     search_result = lk.search_lightcurve(nan_epicID)
 
@@ -153,7 +157,7 @@ for j, file in enumerate(output_files):
             
                 f.write(f"{WGET_CMD} -P {download_dir} {url[k]}\n")
 
-        f.write(f"echo 'Finished downloading {size_epicIDs_split} out of {num_epicIDs} Kepler targets to {download_dir_root}'\n")
+        f.write(f"echo 'Finished downloading {size_epicIDs_split} out of {num_epicIDs} K2 targets to {download_dir_root}'\n")
 
 
 print(f'Generated {num_files} .sh files in {download_dir_root}.')

@@ -1,5 +1,5 @@
 '''
-Python script to get all the sectors bash files for light curves.
+Builds a bash script to download all the sectors bash files for TESS light curves.
 These bash files can be manually downloaded at
 https://archive.stsci.edu/tess/bulk_downloads/bulk_downloads_ffi-tp-lc-dv.html
 '''

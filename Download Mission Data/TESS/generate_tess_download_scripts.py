@@ -1,3 +1,22 @@
+# Copyright 2024 Cleber Silva.
+
+r'''
+Here we generate bash scripts downloads for the TESS mission long-cadence light curves.
+
+The input is a CSV file of Kepler targets and bash files that may be found at
+https://archive.stsci.edu/tess/bulk_downloads/bulk_downloads_ffi-tp-lc-dv.html.
+Check the "download_bahs_files.py" to download all the files you need.
+The CSV file must contain the respective TIC IDs of the desired targets. In my needs,
+I used the TOI TCE table, which can be found in:
+
+https://exoplanetarchive.ipac.caltech.edu/cgi-bin/TblView/nph-tblView?app=ExoTbls&config=TOI
+
+The user must hard-code some inputs, in particular the 'tess_arq' string.
+
+The output is a single .sh file.
+'''
+
+
 import os
 import glob
 import numpy as np
